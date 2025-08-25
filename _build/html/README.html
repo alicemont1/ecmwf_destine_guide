@@ -1,0 +1,713 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ECMWF Jupyterbook learning resource template &#8212; ECMWF Destine User Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=8f37a1a5" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="pages/about.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ECMWF Destine User Guide</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="pages/about.html">
+                    ECMWF’s Destination Earth User Guide
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pages/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/requesting_access_destine_data.html">Requesting Access to Destination Earth Data</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ECMWF Jupyterbook learning resource template</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup">1. Initial setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-repository">1.1 Create your repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-config-yml">1.2 Update <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-github-pages">1.3 Enable GitHub pages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-development">2. Notebook development</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-contents-standards-swump">2.1 Notebook contents &amp; standards (SWUMP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-an-appropriate-template">2.2 Choose an appropriate template</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependancies">2.3. Dependancies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">2.4. Table of contents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">2.5. Best practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-notebooks-short">Keep notebooks short</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-consistent-headings">Use consistent headings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-myst-markdown">Use MyST markdown</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#images">Images</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-data">Use of data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-metadata">Notebook metadata</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#widgets-interactive-output">Widgets &amp; interactive output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references-placeholder-links">Cross-references &amp; placeholder links</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#html-tags-in-general">HTML tags in general</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-jupyterbook">3. Building the JupyterBook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-build-linux-macos">3.1 Local build (Linux/macOS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">3.2 GitHub Actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ecmwf-jupyterbook-learning-resource-template">
+<h1>ECMWF Jupyterbook learning resource template<a class="headerlink" href="#ecmwf-jupyterbook-learning-resource-template" title="Link to this heading">#</a></h1>
+<p>This repository is a GitHub <strong>template</strong> to facilitate development and maintenance of ECMWF Jupyterbooks used for learning, training and other documentation. It contains example notebooks which provide <strong>best practices</strong> for producing publication quality notebooks.</p>
+<p>This template has been designed to be used as a sub-module for a parent repository. Therefore the default branch for this repository is <strong>develop</strong>, and this branch is used to deploy the review/development version of the JupyterBook. The <strong>main</strong> branch is reserved for published content and will be maintained by ECMWF.</p>
+<p>The repository includes github-actions which will automatically build a develop version of the Jupyter Book that can be used for review purposes.</p>
+<section id="initial-setup">
+<h2>1. Initial setup<a class="headerlink" href="#initial-setup" title="Link to this heading">#</a></h2>
+<section id="create-your-repository">
+<h3>1.1 Create your repository<a class="headerlink" href="#create-your-repository" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Click <strong>Use this template</strong> (green button, top-right).</p></li>
+<li><p><strong>Set the repo to <em>public</em></strong> to enable GitHub Pages and Action artifacts.</p></li>
+</ol>
+</section>
+<section id="update-config-yml">
+<h3>1.2 Update <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code><a class="headerlink" href="#update-config-yml" title="Link to this heading">#</a></h3>
+<p>Edit the line</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">repository</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your-repository-url&gt;</span>
+</pre></div>
+</div>
+<p>to point to the repository that you have just created. This is used as the link to the source in the rendered JupyterBook.</p>
+</section>
+<section id="enable-github-pages">
+<h3>1.3 Enable GitHub pages<a class="headerlink" href="#enable-github-pages" title="Link to this heading">#</a></h3>
+<p>Go to the “Settings” tab, then navigate to “Pages” on the left-hand menu pane. In the “Build and deployment” section set the source to “GitHub Actions” from the dropdown menu.</p>
+<blockquote>
+<div><p>[!WARNING]
+<b>Public repository required for github pages</b> If you did not select “public” when creating the repository you will not be able to enable github pages (unless you are using github enterprise). To make the repository public go to “Settings” -&gt; “General” -&gt; “Danger Zone” -&gt; “Change repository visibility”</p>
+</div></blockquote>
+<p>Now go to the “Actions” tab. You will see that the “Initial commit” action failed, this was because the pages were not enabled. You can then click the “Re-run all jobs” buttons in the top right to re-run the actions. This time it should succeed and provide a link to your github pages in the flow diagram.</p>
+<blockquote>
+<div><p>[!TIP]
+<b>Optional</b> You can make this link easier to locate in the future by adding it to the “About” section in the right hand panel of the “Code” tab. Click on the settings cog next to about and check the “Use your GitHub Pages website” checkbox.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="notebook-development">
+<h2>2. Notebook development<a class="headerlink" href="#notebook-development" title="Link to this heading">#</a></h2>
+<section id="notebook-contents-standards-swump">
+<h3>2.1 Notebook contents &amp; standards (SWUMP)<a class="headerlink" href="#notebook-contents-standards-swump" title="Link to this heading">#</a></h3>
+<p>All training material destined for CDS/ADS/CADS portals must satisfy the SWUMP criteria:</p>
+<ul class="simple">
+<li><p><strong>S</strong>elf-explanatory: Steps are clearly, correctly and succinctly explained.</p></li>
+<li><p><strong>W</strong>ell structured: Logical flow and aesthetically pleasing layout with a balanced mix of Markdown and code.</p></li>
+<li><p><strong>U</strong>sable: Notebook runs to completion <strong>without errors</strong> and uses only outputs/widgets compatible with JupyterBook.</p></li>
+<li><p><strong>M</strong>eaningful: Provides an authentic, value-adding use-case for CDS/ADS/CADS data.</p></li>
+<li><p><strong>P</strong>roficient: Passes the code-standards tests (see below).</p></li>
+</ul>
+<p><strong>Code standards tests</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># install necessary packages</span>
+pip<span class="w"> </span>install<span class="w"> </span>flake8-nb
+<span class="w"> </span>
+<span class="c1"># execute tests with CDS configuration options:</span>
+flake8_nb<span class="w"> </span>--max-line-length<span class="w"> </span><span class="m">100</span><span class="w"> </span>--max-doc-length<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="nv">$NOTEBOOK</span>
+</pre></div>
+</div>
+<p>A review checklist is provided <a class="reference external" href="https://confluence.ecmwf.int/pages/viewpage.action?pageId=288335462">here</a>.</p>
+</section>
+<section id="choose-an-appropriate-template">
+<h3>2.2 Choose an appropriate template<a class="headerlink" href="#choose-an-appropriate-template" title="Link to this heading">#</a></h3>
+<p>When developing a notebook please follow the templating guide found in the notebooks provided in this template repository.
+Please select a template that is appropriate to the project that you are working on.</p>
+</section>
+<section id="dependancies">
+<h3>2.3. Dependancies<a class="headerlink" href="#dependancies" title="Link to this heading">#</a></h3>
+<p>The dependancies for the notebooks in this repository should be listed in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.
+(Please note that the dependancies listed in <code class="docutils literal notranslate"><span class="pre">ci/requirements.txt</span></code> are for the github actions, you should not need to modify these dependancies)</p>
+</section>
+<section id="table-of-contents">
+<h3>2.4. Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h3>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> to reflect the notebook structure of your JupyterBook.</p>
+</section>
+<section id="best-practices">
+<h3>2.5. Best practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
+<section id="keep-notebooks-short">
+<h4>Keep notebooks short<a class="headerlink" href="#keep-notebooks-short" title="Link to this heading">#</a></h4>
+<p>Focus on one topic / visualisation / processing routine. Consider separate notebooks if multiple parts or topics are included.</p>
+</section>
+<section id="use-consistent-headings">
+<h4>Use consistent headings<a class="headerlink" href="#use-consistent-headings" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Keep headings in separate cells</p></li>
+<li><p>Use # for first level headings, ## for second level, and so on. Do not skip a level (e.g. do not follow a 1st level heading with a third level, without a second level in between).</p></li>
+</ul>
+</section>
+<section id="use-myst-markdown">
+<h4>Use MyST markdown<a class="headerlink" href="#use-myst-markdown" title="Link to this heading">#</a></h4>
+<p>For enhanced markdown features (e.g. colored cells, icons), use <a class="reference external" href="https://mystmd.org/">MyST markdown</a>, which is compatible with our JupyterBook setup.</p>
+</section>
+<section id="images">
+<h4>Images<a class="headerlink" href="#images" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Store notebook-specific images in <code class="docutils literal notranslate"><span class="pre">./img/.</span></code></p></li>
+<li><p>For images reused across repositories (e.g. logos) link to an external URL such as <a class="reference external" href="https://climate.copernicus.eu/branding-guidelines#Logolines">https://climate.copernicus.eu/branding-guidelines#Logolines</a>. Images not already online can be uploaded to a dedicated repository for training hosted at <a class="reference external" href="https://sites.ecmwf.int/training/">https://sites.ecmwf.int/training/</a> (please contact <a class="reference external" href="mailto:chris&#46;stewart&#37;&#52;&#48;ecmwf&#46;int">chris<span>&#46;</span>stewart<span>&#64;</span>ecmwf<span>&#46;</span>int</a>).</p></li>
+<li><p>Use Markdown image syntax: <code class="docutils literal notranslate"><span class="pre">![&lt;provide</span> <span class="pre">alt</span> <span class="pre">text&gt;](./img/example.png)</span></code></p></li>
+</ul>
+</section>
+<section id="use-of-data">
+<h4>Use of data<a class="headerlink" href="#use-of-data" title="Link to this heading">#</a></h4>
+<p>Data files should not be stored in the Github repository, but hosted externally and linked to, or downloaded from original source (e.g. CDS/ADS).</p>
+</section>
+<section id="notebook-metadata">
+<h4>Notebook metadata<a class="headerlink" href="#notebook-metadata" title="Link to this heading">#</a></h4>
+<p>Apply metadata at the notebook level and at the cell level according to a metadata-schema described here: <a class="github reference external" href="https://github.com/ecmwf-training/jn-metadata-schema">ecmwf-training/jn-metadata-schema</a>.</p>
+</section>
+<section id="widgets-interactive-output">
+<h4>Widgets &amp; interactive output<a class="headerlink" href="#widgets-interactive-output" title="Link to this heading">#</a></h4>
+<p>JupyterBooks run <strong>without a live Python kernel</strong>. Avoid interactive widgets that require a kernel (e.g. many ipywidgets). See the <a class="reference external" href="https://jupyterbook.org/en/stable/interactive/interactive.html#ipywidgets">JupyterBook docs</a> for a compatibility list.</p>
+</section>
+<section id="cross-references-placeholder-links">
+<h4>Cross-references &amp; placeholder links<a class="headerlink" href="#cross-references-placeholder-links" title="Link to this heading">#</a></h4>
+<p>Avoid HTML <code class="docutils literal notranslate"><span class="pre">&lt;a&gt;</span></code> tags without <code class="docutils literal notranslate"><span class="pre">href</span></code> and notebook cross-references built with plain HTML; they render poorly and flood the build with warnings.</p>
+</section>
+<section id="html-tags-in-general">
+<h4>HTML tags in general<a class="headerlink" href="#html-tags-in-general" title="Link to this heading">#</a></h4>
+<p>Refrain from using raw HTML—JupyterBook’s config may override or mis-render it. Markdown covers all required formatting.</p>
+</section>
+</section>
+</section>
+<section id="building-the-jupyterbook">
+<h2>3. Building the JupyterBook<a class="headerlink" href="#building-the-jupyterbook" title="Link to this heading">#</a></h2>
+<p>Notebook providers are responsible for ensuring that the GitHub Actions succesfully build and deploy the JupyterBook. It is advisable to test run the build commands and inspect the output locally before pushing to the repository as this will save you time and effort.</p>
+<section id="local-build-linux-macos">
+<h3>3.1 Local build (Linux/macOS)<a class="headerlink" href="#local-build-linux-macos" title="Link to this heading">#</a></h3>
+<p>It is recommended that you test the build locally prior to creating your pull request to develop, this will address many of the minor issues you may face and provide you with more readable output. To ensure that you have the same software installed required to build the JupyterBook, and that you are not using any unsupported software packages during a local build, it is recommended that you create an conda-forge environment for building Jupyter Books:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">y</span> <span class="o">-</span><span class="n">n</span> <span class="n">JUPYTER</span><span class="o">-</span><span class="n">BUILD</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.12</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">JUPYTER</span><span class="o">-</span><span class="n">BUILD</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span>
+</pre></div>
+</div>
+<p>With your JUPYTER-BUILD environment activated the following line will build the jupyterbook locally:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">_build</span>
+<span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">--</span><span class="nb">all</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This will create all the html files used to create the JupyterBook in the untracked <code class="docutils literal notranslate"><span class="pre">_build/</span></code> folder.
+You can open the homepage of this local build with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
+</pre></div>
+</div>
+</section>
+<section id="github-actions">
+<h3>3.2 GitHub Actions<a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>[!INFO]
+This template is designed to be used as a sub-module for a parent repository. The JupyterBook build here is intended for review and testing purposes, and hence the actions are associated to the develop branch. If you are using this repostory as a stand-alone JupyterBook you may want to update the default branch and github workflow to use the main branch.</p>
+</div></blockquote>
+<p>There are two github actions in place for this repository:</p>
+<section id="build">
+<h4>Build<a class="headerlink" href="#build" title="Link to this heading">#</a></h4>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">Build</span></code></strong> action builds the JupyterBook using the same proceedure as local build described below. It is activated when a pull request to the <code class="docutils literal notranslate"><span class="pre">develop</span></code> branch is opened, or when any change is made to the develop branch (e.g. after merging a pull request). A pull request can only be merged into the develop branch if the <code class="docutils literal notranslate"><span class="pre">Build</span></code> action is successful.</p>
+</section>
+<section id="deploy">
+<h4>Deploy<a class="headerlink" href="#deploy" title="Link to this heading">#</a></h4>
+<p>The <strong><code class="docutils literal notranslate"><span class="pre">Deploy</span></code></strong> action deploys the build JupyterBook to the GitHub Pages associated with this repository. This action is activated when a change is made to the develop branch, after the build action.</p>
+<p>The requirements of the GitHub Actions are listed in <code class="docutils literal notranslate"><span class="pre">ci/requirements.txt</span></code>, do not modify this file. The dependancies of your notebooks should be stored in the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup">1. Initial setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-repository">1.1 Create your repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-config-yml">1.2 Update <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#enable-github-pages">1.3 Enable GitHub pages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-development">2. Notebook development</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-contents-standards-swump">2.1 Notebook contents &amp; standards (SWUMP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-an-appropriate-template">2.2 Choose an appropriate template</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dependancies">2.3. Dependancies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">2.4. Table of contents</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">2.5. Best practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-notebooks-short">Keep notebooks short</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-consistent-headings">Use consistent headings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-myst-markdown">Use MyST markdown</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#images">Images</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-data">Use of data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-metadata">Notebook metadata</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#widgets-interactive-output">Widgets &amp; interactive output</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-references-placeholder-links">Cross-references &amp; placeholder links</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#html-tags-in-general">HTML tags in general</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-jupyterbook">3. Building the JupyterBook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-build-linux-macos">3.1 Local build (Linux/macOS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">3.2 GitHub Actions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build">Build</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Alice Sartori Monteiro de Barros
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
