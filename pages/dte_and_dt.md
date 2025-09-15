@@ -1,3 +1,18 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.11.5
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+
 # Digital Twins (DTE)
  ECMWF currently produces two high priority digital twins, the Climate-Dt and the Extremes DT.
 
@@ -11,8 +26,32 @@ Three different global climate models are being used to run the simulations. The
 * IFS-NEMO
 * IFS-FESOM
 
-The objective of this DT is to enable decision-making in support of climate change adaptation and the implementation of the European Green Deal
+
+Temporal resolution
+* Hourly for atmospheric fields
+* Daily means for ocean fields
+
+Spatial resolution:
+
 
 
 # Digital Twin Engine (DTE)
 
+{expand:title=class}
+  d1
+  {expand:title=model}
+    ICON
+    {expand:title=resolution}
+      high
+      {expand:title=Final JSON}
+        {code:json}
+        {
+          "class": "d1",
+          "model": "ICON",
+          "resolution": "high"
+        }
+        {code}
+      {expand}
+    {expand}
+  {expand}
+{expand}

@@ -4,9 +4,13 @@
 format: jb-book
 root: pages/about
 chapters:
-- file: pages/introduction
-- file: pages/requesting_access_destine_data
-- file: pages/retrieving_data
+- file: pages/1_introduction
+- file: pages/2_requesting_access_destine_data
+# - file: pages/dte_and_dt
+- file: pages/3_dt_portfolio
+- file: pages/4_retrieving_data
+- file: pages/test
+
 
 
 
