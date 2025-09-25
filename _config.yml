@@ -15,27 +15,74 @@ latex:
   latex_documents:
     targetname: book.tex
 
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/alicemont1/ecmwf_destine_guide
   branch: develop
 
-# Add GitHub buttons to your book
-html:
-  use_issues_button: true
-  use_repository_button: true
-  extra_css: ["_static/custom.css"]
 
-# Add sphinx extensions and config
-sphinx:
-  extra_extensions:
-    - sphinxcontrib.bibtex
-  config:
-    bibtex_bibfiles:
-      - references.bib
-    bibtex_reference_style: author_year
+parse:
+  myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+
+
+# sphinx:
+#   extra_extensions:
+#     - sphinxcontrib.bibtex
+#     - sphinx_design
+#   config:
+#     bibtex_bibfiles:
+#       - references.bib
+#     bibtex_reference_style: author_year
+#     html_extra_path: ["img"]
 
 
 # Exclude patterns
 exclude_patterns:
   - developer/*
+
+html:
+  extra_css: ["_static/custom.css"]
+  extra_footer: |
+    <div style="text-align:center; padding:20px;">
+      <img src="/img/footer.png" alt="destine logo" style="height:60px;">
+    </div>
+
+# # Add sphinx extensions and config
+# sphinx:
+#   config:
+#     html_extra_path: ['img']
+
+sphinx:
+  extra_extensions:
+    - sphinx_design
+  config:
+    html_extra_path: ['img']
+    html_theme: sphinx_book_theme
+    templates_path: ["_templates"]
+    html_last_updated_fmt: "%b %d, %Y"
+    html_show_copyright: false
+    html_js_files: ["require-2.3.7.min.js"]
+    html_context:
+      default_mode: light
+    html_theme_options:
+      # https://sphinx-book-theme.readthedocs.io/en/stable/reference.html
+      # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/layout.html#references
+      use_download_button: false
+      use_issues_button: true
+      use_repository_button: true
+      repository_provider: github
+      repository_url: https://github.com/alicemont1/ecmwf_destine_guide
+      announcement: ""
+      show_navbar_footer: false
+    # suppress_warnings: ["mystnb.unknown_mime_type"]

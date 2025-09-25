@@ -3,14 +3,37 @@
 
 format: jb-book
 root: pages/about
-chapters:
-- file: pages/1_introduction
-- file: pages/2_requesting_access_destine_data
-# - file: pages/dte_and_dt
-- file: pages/3_dt_portfolio
-- file: pages/4_retrieving_data
-- file: pages/test
 
+parts:
+- caption: Getting Started
+  chapters:
+  # - file: pages/1_introduction
+  #   title: Destination Earth at ECMWF
+  - file: pages/2_requesting_access_destine_data
+    title: Requesting Access to DestinE Data
+  - file: pages/data_policy
+    title: Data Policy
 
+- caption: Digital Twins Data Portfolio
+  chapters:
+  - file: pages/3_dt_overview
+    title: Overview
+  - file: pages/3.1_climate_dt
+    title: Climate DT
+  - file: pages/3.2_extremes_dt
+    title: Extremes DT
+  - file: pages/aqua.md
+    title: Monitoring and Evaluation Framework
 
-
+- caption: Retrieving Data with Polytope
+  chapters:
+  - file: pages/4.1_introduction_polytope
+    title: Introduction to Polytope
+  - file: pages/4.2_authentication_polytope
+    title: Authentication to Polytope
+  - file: pages/4.3_data_extraction
+    title: Data Extraction
+  - file: pages/4.4_request_language_syntax
+    title: Request Language Syntax
+  - file: pages/4.5_regridding
+    title: Regridding

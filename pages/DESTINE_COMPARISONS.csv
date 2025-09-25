@@ -1,0 +1,11 @@
+﻿Activity;Experiment;Description;Models;Model Versions;Native Grid;Native Resolution Atmosphere;Native Resolution ocean/sea-ice;Date Range;Exact start date;Exact end date;HPC Location;Postprocessed Grid;Postprocessed Resolution: High;Postprocessed Resolution: Standard
+CMIP6;hist;historical;ICON;ICON 2024.01;" Icosahedral R02B08; R02B09";10 km;5 km;1991-2007;19910301;20070808;Lumi;healpix;h1024 (6.37km);NA
+;hist;historical;IFS-NEMO;IFS CY48r3.1*/ Nemo 4.0.7;O2560 / ORCA12;9 km;1/12 ° (~9km);1990-2002;19900101;20020228;Lumi;healpix;h1024 (6.37km);h128 (50,93 km)
+HighResMIP;cont;control;IFS-FESOM;IFS CY48r3.1* / FESOM2;O2560 / NG5;9 km;1/12 °  (~9km);1990-2004;19900101;20041231;MareNostrum;healpix;h512 (12.73km);h128 (50,93 km)
+;cont;control;IFS-NEMO;IFS CY48r3.1*/ Nemo 4.0.7;O2560 /  ORCA12;9 km;1/12 ° (~9km);1990-2007;19900101;20070430;Lumi;healpix;h1024 (6.37km);NA
+ScenarioMIP;ssp3-7.0;future;ICON;ICON 2024.01; Icosahedral R02B09;5 km;5 km;2020-2039;20200901;20391231;Lumi;healpix;h1024 (6.37km);NA
+;ssp3-7.0;future;IFS-FESOM;IFS CY48r3.1* / FESOM2;O2560 / NG5;4,4 km;5 km;2020-2039;20200101;20391231;MareNostrum;healpix;h1024 (6.37km);h128 (50,93 km)
+;ssp3-7.0;future;IFS-NEMO;IFS CY48r3.1*/ Nemo 4.0.7;O2560 /  ORCA12 ;4,4 km;1/12 ° (~9km);2020-2039;20200101;20391231;Lumi;healpix;h1024 (6.37km);h128 (50,93 km)
+story-nudging;cont (control);storyline simulation past climate;IFS-FESOM;IFS CY48r3.1* / FESOM2;O2560 / NG5;9 km;5 km;2017-2024;20170101;20241115;Lumi;healpix;h512 (12.73km);h128 (50,93 km)
+;hist (historical);storyline simulation present climate;IFS-FESOM;IFS CY48r3.1* / FESOM2;O2560 / NG5;9 km;5 km;2017-2024;20170101;20241115;Lumi;healpix;h512 (12.73km);h128 (50,93 km)
+;tplus2.0k;storyline simulation future climate;IFS-FESOM;IFS CY48r3.1* / FESOM2;O2560 / NG5;9 km;5 km;2017-2024;20170101;20241115;Lumi;healpix;h512 (12.73km);h128 (50,93 km)

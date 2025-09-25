@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="../" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
@@ -13,7 +13,7 @@
   
   
   <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=8f37a1a5" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=6d87169a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
@@ -59,16 +59,18 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pages/2_requesting_access_destine_data';</script>
+    <script src="../_static/require-2.3.7.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ECMWF’s Destination Earth Data Porfolio" href="3_dt_portfolio.html" />
-    <link rel="prev" title="Introduction" href="1_introduction.html" />
+    <link rel="next" title="Data Policy" href="data_policy.html" />
+    <link rel="prev" title="ECMWF’s Destination Earth User Guide" href="about.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Sep 24, 2025"/>
   </head>
   
   
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
 
   
   
@@ -105,8 +107,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -163,20 +165,26 @@
  </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="about.html">
-                    ECMWF’s Destination Earth User Guide
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Requesting Access to Destination Earth Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="3_dt_portfolio.html">ECMWF’s Destination Earth Data Porfolio</a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_retrieving_data.html">Retrieving Data with Polytope</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">Template for ECMWF Jupyter notebook-based learning resources <em>[H1]</em></a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Requesting Access to DestinE Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_policy.html">Data Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Digital Twins Data Catalogue</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="3_dt_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.1_climate_dt.html">Climate DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.2_extremes_dt.html">Extremes DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aqua.html">Monitoring and Evaluation Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retrieving Data with Polytope</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="4.1_introduction_polytope.html">Introduction to Polytope</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="4.2_authentication_polytope.html">Authentication to Polytope</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.3_data_extraction.html">Data Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.4_request_language_syntax.html">Request Language Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4.5_regridding.html">Regridding</a></li>
 </ul>
 
     </div>
@@ -260,54 +268,6 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../_sources/pages/2_requesting_access_destine_data.md" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.md</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
 </li>
       
   </ul>
@@ -434,20 +394,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="1_introduction.html"
+       href="about.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">ECMWF’s Destination Earth User Guide</p>
       </div>
     </a>
     <a class="right-next"
-       href="3_dt_portfolio.html"
+       href="data_policy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">ECMWF’s Destination Earth Data Porfolio</p>
+        <p class="prev-next-title">Data Policy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -481,21 +441,10 @@ document.write(`
   
   <div class="footer-item">
     
-<p class="component-author">
-By Alice Sartori Monteiro de Barros
-</p>
-
   </div>
   
   <div class="footer-item">
     
-
-  <p class="copyright">
-    
-      © Copyright 2023.
-      <br/>
-    
-  </p>
 
   </div>
   
@@ -504,7 +453,10 @@ By Alice Sartori Monteiro de Barros
   </div>
   
   <div class="footer-item">
-    
+    <footer>
+  <img src="/img/footer.png" alt="DestinE logo" />
+  <p>Last updated: Sep 24, 2025</p>
+</footer>
   </div>
   
 </div>

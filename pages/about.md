@@ -1,10 +1,14 @@
 # ECMWF's Destination Earth User Guide
 
-This book is a guideline on how to access and use data and software products produced by ECMWF in the context of the Destination Earth project.
+This book serves as a guide to accessing and using the data and software products provided by ECMWF within the context of the Destination Earth project.
 
+It is not intended to be a comprehensive user manual for all services and datasets. Instead, it offers a central point of reference, providing brief explanations and direct links to the official service documentation.
+
+
+:::{warning}
+This documentation is a work in progress. Content is continuously being updated and expanded. 
+:::
 
 
 ```{tableofcontents}
 ```
-
-![Footer](https://confluence.ecmwf.int/display/STYLE/Official+Destination+Earth+logos?preview=/298949152/304218533/EU%20DestinE%20VISUAL_Destination%20Earth.png)

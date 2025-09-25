@@ -1,0 +1,5 @@
+﻿Component;Models;Model versions;Description;Native Grid;Native Resolution;Postprocessed Grid;Postprocessed Resolution
+global;IFS-NEMO;IFS CY48r3.1*/ Nemo 3.4;Atmosphere;O2560;4,4 km;octahedral reduced gaussian;O2560
+;IFS-NEMO;IFS CY48r3.1*/ Nemo 3.4;Ocean;ORCA025;1/4 ° (~25km);octahedral reduced gaussian;O2560
+;IFS-NEMO (ECWAM);IFS CY48r3.1*/ Nemo 3.4;Wave;reduced lat-lon;0,05 ° (~ 5,55km);reduced lat-lon;0,05 ° (ca 5,55km)
+regional;ACCORD Models;-;-;-;500-750 m;-;-

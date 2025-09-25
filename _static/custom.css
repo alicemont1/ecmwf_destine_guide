@@ -23,3 +23,28 @@ hr {
     width: 90%;           /* Set width */
     border-radius: 1px;   /* Optional: Rounded edges */
 }
+
+.img-full {
+  width: 100% !important;
+  height: auto;
+  display: block;
+}
+
+
+
+footer {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+footer img {
+  width: 100%;
+  height: auto;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
