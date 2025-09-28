@@ -55,7 +55,7 @@ html:
   extra_css: ["_static/custom.css"]
   extra_footer: |
     <div style="text-align:center; padding:20px;">
-      <img src="_static/img/footer.png" alt="destine logo" style="height:60px;">
+      <img src="_static/footer.png" alt="destine logo" style="height:60px;">
     </div>
 
 # # Add sphinx extensions and config
