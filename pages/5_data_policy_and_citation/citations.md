@@ -1,8 +1,4 @@
-
-(ch3.3)=
-
-
-## Citations
+# Citations
 
 Currently, there are no DOIs for the specific Digital Twin datasets.  
 Please cite the datasets using the following resources:
