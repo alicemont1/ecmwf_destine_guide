@@ -55,7 +55,7 @@ html:
   extra_css: ["_static/custom.css"]
   extra_footer: |
     <div style="text-align:center; padding:20px;">
-      <img src="{{ pathto('_static/img/footer.png', 1) }}" alt="destine logo" style="height:60px;">
+      <img src="{{ pathto('img/footer.png', 1) }}" alt="destine logo" style="height:60px;">
     </div>
 
 # # Add sphinx extensions and config
@@ -84,5 +84,5 @@ sphinx:
       repository_provider: github
       repository_url: https://github.com/alicemont1/ecmwf_destine_guide
       announcement: ""
-      show_navbar_footer: false
+      # show_navbar_footer: false
     # suppress_warnings: ["mystnb.unknown_mime_type"]
