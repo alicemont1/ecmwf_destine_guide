@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Climate Digital Twin &#8212; ECMWF Destine User Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6d87169a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/2_digitial_twins_data_portfolio/2.2_climate_dt';</script>
+    <script src="../../_static/require-2.3.7.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extremes Digital Twin" href="2.3_extremes_dt.html" />
+    <link rel="prev" title="Overview of ECMWF’s Destination Earth Data Porfolio" href="2.1_dt_overview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Sep 28, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../about.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ECMWF Destine User Guide</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.1_introduction.html">Destination Earth at ECMWF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.2_requesting_access_destine_data.html">Requesting Access to DestinE Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.3_preparing_your_environment.html">Preparing your Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.4_authentication_polytope.html">Authentication with Polytope</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Digital Twins Data Portfolio</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2.1_dt_overview.html">Overview</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Climate DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.3_extremes_dt.html">Extremes DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2.4_aqua.html">Monitoring and Evaluation Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retrieving Data with Polytope</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.1_introduction_polytope.html">Introduction to Polytope</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.2_data_extraction.html">Data Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.3_request_language_syntax.html">Request Language Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.4_regridding.html">Regridding</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Policy and Citation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_data_policy_and_citation/data_policy.html">Data Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_data_policy_and_citation/citations.html">Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide/issues/new?title=Issue%20on%20page%20%2Fpages/2_digitial_twins_data_portfolio/2.2_climate_dt.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Climate Digital Twin</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simulations">The Simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-simulations">Historical Simulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-experiment">Control Experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#future-projections">Future Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storyline-simulations-story-nudging">Storyline Simulations (Story-Nudging)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocean-spin-up-and-initialization-strategy">Ocean Spin-Up and Initialization Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-historical-simulations">For Historical Simulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-future-projections">For Future Projections</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="climate-digital-twin">
+<span id="ch2-2"></span><h1>Climate Digital Twin<a class="headerlink" href="#climate-digital-twin" title="Link to this heading">#</a></h1>
+<p>The Climate Digital twin models produce climate projections over multi-decadal time periods at 5-10km resolution.</p>
+<p>These models are being developed through a collaboration led by Finland’s IT Center for Science (CSC), involving climate institutions, supercomputing centers, national meteorological services, academia, and industrial partners.</p>
+<p>The objectives of the Climate DT are:</p>
+<ul class="simple">
+<li><p>operationalize climate projections on a regular basis (yearly)</p></li>
+<li><p>Provide on-demand simulations to explore “what if” scenarios</p></li>
+<li><p>Establish an operational framework encompassing monitoring, evaluation, quality assurance, and uncertainty quantification</p></li>
+</ul>
+<p>Three different global climate models are being used to run the simulations. They include:</p>
+<ul class="simple">
+<li><p><strong>ICON</strong>: The ICOsahedral Non-hydrostatic model, developed by DWD, MPI-M, DKRZ, KIT, and C2SM</p></li>
+<li><p><strong>IFS-NEMO</strong>: ECMWF’s IFS coupled with the NEMO ocean model, implemented by BSC with ECMWF</p></li>
+<li><p><strong>IFS-FESOM</strong>: ECMWF’s IFS coupled with the Alfred Wegener Institute’s Finite-VolumE Sea ice–Ocean Model (FESOM)</p></li>
+</ul>
+<section id="the-simulations">
+<h2>The Simulations<a class="headerlink" href="#the-simulations" title="Link to this heading">#</a></h2>
+<p>The experimental design is inspired by the High Resolution Model Intercomparison Project (HighResMIP), part of CMIP6. HighResMIP defines three core experiments: a control run with fixed forcings, historical runs with observed changes, and future scenario runs under increasing greenhouse gases. Climate DT follows a similar structure, adapting these protocols to kilometre-scale models, and extends them with additional storyline simulations.</p>
+<section id="historical-simulations">
+<h3>Historical Simulations<a class="headerlink" href="#historical-simulations" title="Link to this heading">#</a></h3>
+<p>Starting in 1990, the forcing follows observed changes in greenhouse gases, aerosols etc. until 2020. The simulations are using standardised CMIP6 forcing.</p>
+</section>
+<section id="control-experiment">
+<h3>Control Experiment<a class="headerlink" href="#control-experiment" title="Link to this heading">#</a></h3>
+<p>In this experiment, all external forcings are held constant at their 1990 values, including greenhouse gases, aerosols, ozone, solar forcing, etc. This setup provides a stationary climate background to test the stability of the high-resolution model and to detect artificial drift, serving as a quality-control reference for the historical and scenario simulations.</p>
+</section>
+<section id="future-projections">
+<h3>Future Projections<a class="headerlink" href="#future-projections" title="Link to this heading">#</a></h3>
+<p>Future scenarios are based on the <strong>Scenario Model Intercomparison Project (ScenarioMIP)</strong>. DestinE currently uses <strong>SSP3-7.0</strong>, a high-emissions pathway marked by limited international cooperation and weak climate policy. Simulations start in 2020 from reanalysis data, include a five-year ocean spin-up, and extend forward under SSP3-7.0. Later phases will add more scenarios.</p>
+</section>
+<section id="storyline-simulations-story-nudging">
+<h3>Storyline Simulations (Story-Nudging)<a class="headerlink" href="#storyline-simulations-story-nudging" title="Link to this heading">#</a></h3>
+<p>Storyline simulations provide a <em>what-if</em> framework to explore how recent weather events might look under different climate conditions—such as a warmer world or pre-industrial times.</p>
+<p>In these simulations, the model is nudged to follow observed large-scale atmospheric circulation patterns from ERA5 data (2017–2023), effectively reproducing real-world atmospheric dynamics. This means that extreme events driven by large-scale circulation are realistically captured, as they occurred in reality. Meanwhile, smaller-scale processes—such as rainfall, temperature changes, and convection—are allowed to evolve freely within the model’s physics.</p>
+<p>This setup can then be used to simulate the same events under different climate conditions — such as a colder 1950s climate or a warmer future climate — to explore how those events might have unfolded differently. Would the impacts have changed? Would the event have been more or less intense?</p>
+<p>Initial conditions are drawn from:</p>
+<ul class="simple">
+<li><p>ocean-only spin-up simulations for <strong>1950</strong> and <strong>2017</strong>, and</p></li>
+<li><p>the <strong>IFS–FESOM projection for a +2 °C world (tplus2.0)</strong>.</p></li>
+</ul>
+</section>
+</section>
+<section id="ocean-spin-up-and-initialization-strategy">
+<h2>Ocean Spin-Up and Initialization Strategy<a class="headerlink" href="#ocean-spin-up-and-initialization-strategy" title="Link to this heading">#</a></h2>
+<p>To ensure stable starting conditions, the ocean must be brought close to equilibrium before running coupled simulations.
+This is achieved through a combination of ocean-only and coupled spin-up phases, which differ slightly depending on the type of simulation.</p>
+<section id="for-historical-simulations">
+<h3>For Historical Simulations<a class="headerlink" href="#for-historical-simulations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ocean initialized from reanalysis in 1985</p></li>
+<li><p>5-year ocean-only spin-up with ERA5 forcing (1985–1990)</p></li>
+<li><p>2-year coupled spin-up with fixed 1990 forcing</p></li>
+<li><p>Provides initial conditions for historical runs starting in 1990</p></li>
+</ul>
+</section>
+<section id="for-future-projections">
+<h3>For Future Projections<a class="headerlink" href="#for-future-projections" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Ocean-only spin-up from 2015–2019 with ERA5 forcing</p></li>
+<li><p>No coupled spin-up; projections start directly from ocean-only state in 2020</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pages/2_digitial_twins_data_portfolio"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2.1_dt_overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Overview of ECMWF’s Destination Earth Data Porfolio</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="2.3_extremes_dt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extremes Digital Twin</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-simulations">The Simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-simulations">Historical Simulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#control-experiment">Control Experiment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#future-projections">Future Projections</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#storyline-simulations-story-nudging">Storyline Simulations (Story-Nudging)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ocean-spin-up-and-initialization-strategy">Ocean Spin-Up and Initialization Strategy</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-historical-simulations">For Historical Simulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-future-projections">For Future Projections</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <footer>
+  <img src="/img/footer.png" alt="DestinE logo" />
+  <p>Last updated: Sep 28, 2025</p>
+</footer>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

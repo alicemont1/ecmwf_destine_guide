@@ -7,33 +7,40 @@ root: pages/about
 parts:
 - caption: Getting Started
   chapters:
-  # - file: pages/1_introduction
-  #   title: Destination Earth at ECMWF
-  - file: pages/2_requesting_access_destine_data
+  - file: pages/1_getting_started/1.1_introduction
+    title: Destination Earth at ECMWF
+  - file: pages/1_getting_started/1.2_requesting_access_destine_data
     title: Requesting Access to DestinE Data
-  - file: pages/data_policy
-    title: Data Policy
-
+  - file: pages/1_getting_started/1.3_preparing_your_environment
+    title: Preparing your Environment
+  - file: pages/1_getting_started/1.4_authentication_polytope
+    title: Authentication with Polytope
+  
 - caption: Digital Twins Data Portfolio
   chapters:
-  - file: pages/3_dt_overview
+  - file: pages/2_digitial_twins_data_portfolio/2.1_dt_overview
     title: Overview
-  - file: pages/3.1_climate_dt
+  - file: pages/2_digitial_twins_data_portfolio/2.2_climate_dt
     title: Climate DT
-  - file: pages/3.2_extremes_dt
+  - file: pages/2_digitial_twins_data_portfolio/2.3_extremes_dt
     title: Extremes DT
-  - file: pages/aqua.md
+  - file: pages/2_digitial_twins_data_portfolio/2.4_aqua
     title: Monitoring and Evaluation Framework
 
 - caption: Retrieving Data with Polytope
   chapters:
-  - file: pages/4.1_introduction_polytope
+  - file: pages/3_retrieving_data_with_polytope/3.1_introduction_polytope
     title: Introduction to Polytope
-  - file: pages/4.2_authentication_polytope
-    title: Authentication to Polytope
-  - file: pages/4.3_data_extraction
+  - file: pages/3_retrieving_data_with_polytope/3.2_data_extraction
     title: Data Extraction
-  - file: pages/4.4_request_language_syntax
+  - file: pages/3_retrieving_data_with_polytope/3.3_request_language_syntax
     title: Request Language Syntax
-  - file: pages/4.5_regridding
+  - file: pages/3_retrieving_data_with_polytope/3.4_regridding
     title: Regridding
+
+- caption: Data Policy and Citation
+  chapters:
+  - file: pages/5_data_policy_and_citation/data_policy
+    title: Data Policy
+  - file: pages/5_data_policy_and_citation/citations
+    title: Citations

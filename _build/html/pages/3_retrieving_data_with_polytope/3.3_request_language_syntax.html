@@ -1,0 +1,581 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Request Language Syntax &#8212; ECMWF Destine User Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6d87169a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/3_retrieving_data_with_polytope/3.3_request_language_syntax';</script>
+    <script src="../../_static/require-2.3.7.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Regriding" href="3.4_regridding.html" />
+    <link rel="prev" title="How to Extract Data with Polytope" href="3.2_data_extraction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Sep 28, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../about.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ECMWF Destine User Guide</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.1_introduction.html">Destination Earth at ECMWF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.2_requesting_access_destine_data.html">Requesting Access to DestinE Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.3_preparing_your_environment.html">Preparing your Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.4_authentication_polytope.html">Authentication with Polytope</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Digital Twins Data Portfolio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.1_dt_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.2_climate_dt.html">Climate DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.3_extremes_dt.html">Extremes DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.4_aqua.html">Monitoring and Evaluation Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retrieving Data with Polytope</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="3.1_introduction_polytope.html">Introduction to Polytope</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="3.2_data_extraction.html">Data Extraction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Request Language Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.4_regridding.html">Regridding</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Policy and Citation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_data_policy_and_citation/data_policy.html">Data Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_data_policy_and_citation/citations.html">Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide/issues/new?title=Issue%20on%20page%20%2Fpages/3_retrieving_data_with_polytope/3.3_request_language_syntax.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Request Language Syntax</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#destine-keyword-reference">DestinE Keyword Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-polytope-feature-extraction">More on Polytope Feature Extraction</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="request-language-syntax">
+<span id="ch3-3"></span><h1>Request Language Syntax<a class="headerlink" href="#request-language-syntax" title="Link to this heading">#</a></h1>
+<p>When writing a request for Digital Twin (DT) data, you’ll need to use a syntax that is based on <strong>ECMWF’s Mars language</strong>, with some additional and some modified keywords, specified in the DestinE Keyword Reference table below.</p>
+<p>For polytope feature requests, the request dictionary must include an additional key “feature” with a corresponding dictionary as its value. This dictionary specifies the feature-related parameters. These are not part of the standard MARS syntax but follow a similar structure—just with additional key-value pairs specific to Polytope (See more in Feature extraction section).</p>
+<p>If you’re just starting out, the following key references will save you time:</p>
+<ul class="simple">
+<li><p>📖 The <a class="reference external" href="https://confluence.ecmwf.int/display/DDCZ/DestinE+Parameter+Portfolios">DestinE data catalogue</a> — a complete list of available datasets and parameters.</p></li>
+<li><p>📖 The <a class="reference external" href="https://confluence.ecmwf.int/display/UDOC/Keywords+in+MARS+and+Dissemination+requests">Mars keywords reference</a> — useful when building queries for date ranges, time steps, or forecast intervals.</p></li>
+<li><p>📖 <a class="reference external" href="https://polytope.readthedocs.io/en/latest/Service/Data_Portfolio/">The Polytope Key Value Pairs</a></p></li>
+</ul>
+<p>Together, these resources will help you craft valid requests for DestinE data.</p>
+<hr class="docutils" />
+<section id="destine-keyword-reference">
+<h2>DestinE Keyword Reference<a class="headerlink" href="#destine-keyword-reference" title="Link to this heading">#</a></h2>
+<p>Here’s a tabular overview of the most relevant keywords for DestinE requests:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Keyword</strong></p></th>
+<th class="head"><p><strong>Applies To</strong></p></th>
+<th class="head"><p><strong>Values</strong></p></th>
+<th class="head"><p><strong>Notes</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">class</span></code></p></td>
+<td><p>climate-dt, extremes-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">d1</span></code> , <code class="docutils literal notranslate"><span class="pre">ng</span></code></p></td>
+<td><p>Main category of data (d1 for destine data, ng for nextgems)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">dataset</span></code></p></td>
+<td><p>climate-dt, extremes-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">climate-dt</span></code>, <code class="docutils literal notranslate"><span class="pre">extremes-dt</span></code></p></td>
+<td><p>Which dataset to query (<em>DestinE specific key</em>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">expver</span></code></p></td>
+<td><p>climate-dt, extremes-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">001</span></code></p></td>
+<td><p>Experiment version (distinguishes model/data runs)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stream</span></code></p></td>
+<td><p>climate-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">clte</span></code></p></td>
+<td><p>Climate stream</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>extremes-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">wave</span></code>, <code class="docutils literal notranslate"><span class="pre">oper</span></code></p></td>
+<td><p>Wave or atmospheric model stream</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">activity</span></code></p></td>
+<td><p>climate-dt only</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">story-nudging</span></code>, <code class="docutils literal notranslate"><span class="pre">scenariomip</span></code>, <code class="docutils literal notranslate"><span class="pre">highresmip</span></code>, <code class="docutils literal notranslate"><span class="pre">cmip6</span></code>, <code class="docutils literal notranslate"><span class="pre">baseline</span></code></p></td>
+<td><p>Scientific project or activity</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
+<td><p>climate-dt, extremes-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">fc</span></code></p></td>
+<td><p>Forecast data</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code></p></td>
+<td><p>climate-dt, extremes-dt</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">standard</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
+<td><p>Spatial resolution</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">experiment</span></code></p></td>
+<td><p>climate-dt only</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tplus2.0k</span></code>, <code class="docutils literal notranslate"><span class="pre">ssp3-7.0</span></code>, <code class="docutils literal notranslate"><span class="pre">hist</span></code>, <code class="docutils literal notranslate"><span class="pre">cont</span></code></p></td>
+<td><p>Model scenario or setup</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">generation</span></code></p></td>
+<td><p>climate-dt only</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>Data/model generation</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">model</span></code></p></td>
+<td><p>climate-dt only</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ifs-nemo</span></code>, <code class="docutils literal notranslate"><span class="pre">ifs-fesom</span></code>, <code class="docutils literal notranslate"><span class="pre">icon</span></code></p></td>
+<td><p>Model type</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">realization</span></code></p></td>
+<td><p>climate-dt only</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
+<td><p>members of an ensemble of simulations that differ only in their initial conditions. <a class="reference external" href="https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/Papers/CMIP6_global_attributes_filenames_CVs_v6.2.7.pdf">More info</a></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feature</span></code></p></td>
+<td><p>optional</p></td>
+<td><p>JSON object</p></td>
+<td><p>Used for Polytope feature extraction requests</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The mars “resol” keyword does not work on DestinE data, and instead the key “resolution” should be used to specify dataset resolution.</p>
+</div>
+</section>
+<section id="more-on-polytope-feature-extraction">
+<h2>More on Polytope Feature Extraction<a class="headerlink" href="#more-on-polytope-feature-extraction" title="Link to this heading">#</a></h2>
+<p>Polytope can enhance standard requests with <strong>feature extraction</strong>, allowing you to specify a <code class="docutils literal notranslate"><span class="pre">feature</span></code> keyword that contains a JSON dictionary describing the shape or path of interest. The service then extracts only the points that fall within that feature.</p>
+<p>For details on the features that are available for extraction, please check the <a class="reference external" href="https://polytope.readthedocs.io/en/latest/Service/Features/feature/">official guide</a>.</p>
+<p>Supported feature types include (availability may vary by dataset):</p>
+<ul class="simple">
+<li><p>Time series</p></li>
+<li><p>Flight paths</p></li>
+<li><p>Geographic polygons</p></li>
+<li><p>Point extractions</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Feature extraction requests return <strong>CoverageJSON</strong>, not the GRIB format used in standard requests.</p>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pages/3_retrieving_data_with_polytope"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="3.2_data_extraction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">How to Extract Data with Polytope</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3.4_regridding.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Regriding</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#destine-keyword-reference">DestinE Keyword Reference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-polytope-feature-extraction">More on Polytope Feature Extraction</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <footer>
+  <img src="/img/footer.png" alt="DestinE logo" />
+  <p>Last updated: Sep 28, 2025</p>
+</footer>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

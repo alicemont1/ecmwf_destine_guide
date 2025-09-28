@@ -1,0 +1,718 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Template for ECMWF Jupyter notebook-based learning resources [H1] &#8212; ECMWF Destine User Guide</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6d87169a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/unsorted/test';</script>
+    <script src="../../_static/require-2.3.7.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Sep 28, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../about.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">ECMWF Destine User Guide</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.1_introduction.html">Destination Earth at ECMWF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.2_requesting_access_destine_data.html">Requesting Access to DestinE Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.3_preparing_your_environment.html">Preparing your Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../1_getting_started/1.4_authentication_polytope.html">Authentication with Polytope</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Digital Twins Data Portfolio</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.1_dt_overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.2_climate_dt.html">Climate DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.3_extremes_dt.html">Extremes DT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../2_digitial_twins_data_portfolio/2.4_aqua.html">Monitoring and Evaluation Framework</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Retrieving Data with Polytope</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.1_introduction_polytope.html">Introduction to Polytope</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.2_data_extraction.html">Data Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.3_request_language_syntax.html">Request Language Syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../3_retrieving_data_with_polytope/3.4_regridding.html">Regridding</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Policy and Citation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../5_data_policy_and_citation/data_policy.html">Data Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../5_data_policy_and_citation/citations.html">Citations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/alicemont1/ecmwf_destine_guide/issues/new?title=Issue%20on%20page%20%2Fpages/unsorted/test.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Template for ECMWF Jupyter notebook-based learning resources [H1]</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-template-second-level-header-h2">How to use this template <em>[second level header, H2]</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-headers-third-level-header-h3">Use of headers  <em>[third level header, H3]</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-and-markdown-cells">Code and markdown cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-images">Use of images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-data">Use of data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-metadata">Notebook metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives 🎯</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-environment">Prepare your environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-cdsapi-and-your-credentials">Setup the CDSAPI and your credentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-import-libraries">(Install and) Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-data-directory">Specify data directory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-data">Explore data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-the-data">Search for the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-data">Download the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-data">Inspect data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-home-messages">Take home messages 📌</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">JSON</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}},</span>
+    <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}],</span>
+<span class="p">}</span>
+
+<span class="n">JSON</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;IPython.core.display.JSON object&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="template-for-ecmwf-jupyter-notebook-based-learning-resources-h1">
+<h1>Template for ECMWF Jupyter notebook-based learning resources <em>[H1]</em><a class="headerlink" href="#template-for-ecmwf-jupyter-notebook-based-learning-resources-h1" title="Link to this heading">#</a></h1>
+<p><em>Make the title as clear and concise as possible.</em></p>
+<p><strong>This notebook can be run on free online platforms, such as Binder, Kaggle and Colab, or they can be accessed from GitHub. The links to run this notebook in these environments are provided here, but please note they are not supported by ECMWF.</strong></p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/ecmwf-training/jupyter-notebook-template/main?labpath=jupyter-notebook-template-copernicus.ipynb"><img alt="binder" src="https://mybinder.org/badge.svg" /></a>
+<a class="reference external" href="https://kaggle.com/kernels/welcome?src=https://github.com/ecmwf-training/jupyter-notebook-template/blob/main/jupyter-notebook-template-copernicus.ipynb"><img alt="kaggle" src="https://kaggle.com/static/images/open-in-kaggle.svg" /></a>
+<a class="reference external" href="https://colab.research.google.com/github/ecmwf-training/jupyter-notebook-template/blob/main/jupyter-notebook-template-copernicus.ipynb"><img alt="colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a>
+<a class="reference external" href="https://github.com/ecmwf-training/jupyter-notebook-template/blob/main/jupyter-notebook-template-copernicus.ipynb"><img alt="github" src="https://img.shields.io/badge/Open%20in-GitHub-black?logo=github" /></a></p>
+<section id="how-to-use-this-template-second-level-header-h2">
+<h2>How to use this template <em>[second level header, H2]</em><a class="headerlink" href="#how-to-use-this-template-second-level-header-h2" title="Link to this heading">#</a></h2>
+<p><em>This is a template notebook which provides a style guide, best-practices and some hints for creating training material for ECMWF.</em></p>
+<p><em>Try to keep notebooks short. Focus on one topic / visualisation / processing routine. Consider separate notebooks if multiple parts or topics are included.</em></p>
+<p><em>Text in italic includes instructions for the learner/user, while normal text includes examples. [H1], [H2], etc. refer to header levels 1, 2, etc.</em></p>
+<section id="use-of-headers-third-level-header-h3">
+<h3>Use of headers  <em>[third level header, H3]</em><a class="headerlink" href="#use-of-headers-third-level-header-h3" title="Link to this heading">#</a></h3>
+<p><em>This section demonstrates how to use headers to separate sections. Headers should be in their own markdown cell such that they can be used to collapse sections.</em></p>
+<p><em>Headers should use sentence case, i.e. only capitalise first letter of first word, or first letter of proper nouns.</em></p>
+<p><em>[H1] headings are for notebook titles only, any sub-headings should begin at [H2]. Heading levels should not be skipped, e.g. you should not go from [H2] directly to [H4]</em></p>
+</section>
+<section id="code-and-markdown-cells">
+<h3>Code and markdown cells<a class="headerlink" href="#code-and-markdown-cells" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a python comment</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;This is a code cell!</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Comments should not be to long, anything detailed should be covered in markdown cells.&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a code cell!
+Comments should not be to long, anything detailed should be covered in markdown cells.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>You can add note windows using the <a class="reference external" href="https://jupyterbook.org/en/stable/content/content-blocks.html#admonitions-colons">colon spacing directives</a>. This will be rendered in the JupyterBook as Note window, and also means that the text is rendered as markdown in the local version.</em></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is an example warning block, with a real warning:</p>
+<p><em>Please refrain from using HTML tags as they tend to interfere with the build of the JupyterBook build. JupyterBook uses <a class="reference external" href="https://jupyterbook.org/en/stable/content/myst.html">MyST Markdown</a> to convert the markdown content into the rendered HTML.</em></p>
+<p><em>We do not ban the use of HTML tags, as in some instances they are safe and the only option to acheive the desired outcome. However, we have generally found MyST Markdown solutions avoiding the HTML tags, and if there is an alternative you will be asked to implement this.</em></p>
+</div>
+<p><em>In addition to the code and markdown cells, please also inspect and populate the metadata, at both the notebook level, and for certain cells. More information about this is provided here: <a class="github reference external" href="https://github.com/ecmwf-training/jn-metadata-schema">ecmwf-training/jn-metadata-schema</a></em></p>
+<p><em>The sections from “How to use this template” to here are for documenting this template, and should be removed prior to submitting your final notebook for review.</em></p>
+</section>
+<section id="use-of-images">
+<h3>Use of images<a class="headerlink" href="#use-of-images" title="Link to this heading">#</a></h3>
+<p><em>Any images unique to the Jupyter notebook should be stored in the ./img folder in this repository. Any images needed across multiple notebooks in multiple repositories (such as logolines) should be sourced from an external URL (see for example links to ECMWF and Copernicus logos here <a class="reference external" href="https://climate.copernicus.eu/branding-guidelines#Logolines">https://climate.copernicus.eu/branding-guidelines#Logolines</a>). Images not already online can be uploaded to a dedicated repository for training hosted at <a class="reference external" href="https://sites.ecmwf.int/training/">https://sites.ecmwf.int/training/</a> (please contact chris.stewart&#64;ecmwf.int).</em></p>
+</section>
+<section id="use-of-data">
+<h3>Use of data<a class="headerlink" href="#use-of-data" title="Link to this heading">#</a></h3>
+<p><em>Data files should not be stored in the Github repository, but hosted externally and linked to, or downloaded from original source (e.g. CDS/ADS).</em></p>
+</section>
+<section id="notebook-metadata">
+<h3>Notebook metadata<a class="headerlink" href="#notebook-metadata" title="Link to this heading">#</a></h3>
+<p><em>Apply metadata at the notebook level and at the cell level according to a metadata-schema described here: <a class="github reference external" href="https://github.com/ecmwf-training/jn-metadata-schema">ecmwf-training/jn-metadata-schema</a>.</em></p>
+</section>
+</section>
+<section id="learning-objectives">
+<h2>Learning objectives 🎯<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p><em>This is a mandatory section for C3S training material</em></p>
+<p><em>Describe briefly what the learner/user can expect to learn in this notebook. Address the learner directly, for example:</em></p>
+<p>You will use and adapt this Jupyter notebook template to create your own Jupyter notebook tutorials. Having followed this notebook, you will gain an understanding of the overall layout, common elements, metadata schema and best practices to apply in creating Jupyter notebook based learning resources for ECMWF.</p>
+</section>
+<section id="prepare-your-environment">
+<h2>Prepare your environment<a class="headerlink" href="#prepare-your-environment" title="Link to this heading">#</a></h2>
+<p><em>Insert here any necessary instructions to set-up the environment of leaners, any background information on data, projects, access to data catalogues, or preliminary steps necessary to run the notebooks. These may include instructions for installing packages, imports, etc.</em></p>
+<section id="setup-the-cdsapi-and-your-credentials">
+<h3>Setup the CDSAPI and your credentials<a class="headerlink" href="#setup-the-cdsapi-and-your-credentials" title="Link to this heading">#</a></h3>
+<p><em>You may not need this subsection, it has been inserted here as an example of a tutorial/guide on how to access and explore data from the C3S Climate Data Store.</em></p>
+<p>The code below will ensure that the <code class="docutils literal notranslate"><span class="pre">cdsapi</span></code> package is installed. If you have not setup your <code class="docutils literal notranslate"><span class="pre">~/.cdsapirc</span></code> file with your credenials, you can replace <code class="docutils literal notranslate"><span class="pre">None</span></code> with your credentials that can be found on the <a class="reference external" href="https://cds.climate.copernicus.eu/how-to-api">how to api</a> page (you will need to log in to see your credentials).</p>
+<div class="cell tag_install tag_api docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>cdsapi
+<span class="c1"># If you have already setup your .cdsapirc file you can leave this as None</span>
+<span class="n">cdsapi_key</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">cdsapi_url</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="install-and-import-libraries">
+<h3>(Install and) Import libraries<a class="headerlink" href="#install-and-import-libraries" title="Link to this heading">#</a></h3>
+<p><em>This section should import any libraries, if appropriate for the target audience, briefly describe libraries in Markdown cells, before listing the imports in code cells</em></p>
+<p><em>If necessary, include installation instructions for other packages. However, in training events it is convenient to use free Jupyter platforms that already have key libraries (such as numpy, matplotlib, etc.) installed. These platforms differ, for example Colab does not include Cartopy, which can be installed by adding the line of code <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">cartopy</span></code>. Binder creates a bespoke environment from your environment.yml file, but this can take some time to create.</em></p>
+<p><em>Wherever possible, use ECMWF packages, such as <a class="reference external" href="https://earthkit-data.readthedocs.io/en/latest/">Earthkit</a>.</em></p>
+<p>We will be working with data in NetCDF format. To best handle this data, we will use the <a class="reference external" href="https://xarray.dev/">Xarray</a> library for working with multidimensional arrays.</p>
+<div class="cell tag_import docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># os is a module that provides a way to interact with the operating system</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># To access data programmatically from the CDS</span>
+<span class="kn">import</span> <span class="nn">cdsapi</span>
+
+<span class="c1"># For working with multidimensional arrays</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="specify-data-directory">
+<h3>Specify data directory<a class="headerlink" href="#specify-data-directory" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Directory to store data</span>
+<span class="n">DATADIR</span> <span class="o">=</span> <span class="s1">&#39;./data_dir/&#39;</span>
+<span class="c1"># Create this directory if it doesn&#39;t exist</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">DATADIR</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="explore-data">
+<h2>Explore data<a class="headerlink" href="#explore-data" title="Link to this heading">#</a></h2>
+<p><em>This is an example section, which may not be necassary in your specific notebook. That said, finding, downloading and inspecting data is a very useful introduction, so it is recommended you use this. If sensible for the flow of your notebook, this may occur in several places through, e.g. if you are accessing multiple datasets for different sections.</em></p>
+<p><em>This section describes how to find the data used in this notebook, including link to the CDS catalogue entry and description of the various fields in the CDS request.</em></p>
+<p>We will now search, download and explore climate reanalysis data from the <a class="reference external" href="https://cds.climate.copernicus.eu/">Climate Data Store</a>. The dataset we will use is the <a class="reference external" href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-monthly-means?tab=overview">ERA5 monthly averaged data on single levels from 1940 to present</a>. ERA5 is the 5th version of the ECMWF Reanalysis dataset. Reanalysis uses a state of the art forecast model and data assimilation system to create a consistent “map without gaps” of observed and modelled climate variables over the past decades.</p>
+<section id="search-for-the-data">
+<h3>Search for the data<a class="headerlink" href="#search-for-the-data" title="Link to this heading">#</a></h3>
+<p>Having selected the correct dataset, we now need to specify what product type, variables, temporal and geographic coverage we are interested in. These can all be selected in the <strong>“Download data”</strong> tab. In this tab a form appears in which we will select the following parameters to download:</p>
+<div class="{dropdown}Parameters docutils">
+<ul class="simple">
+<li><p>Product type: <code class="docutils literal notranslate"><span class="pre">Monthly</span> <span class="pre">averaged</span> <span class="pre">reanalysis</span></code></p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">2m</span> <span class="pre">temperature</span></code></p></li>
+<li><p>Year: <code class="docutils literal notranslate"><span class="pre">2023</span></code></p></li>
+<li><p>Month: <code class="docutils literal notranslate"><span class="pre">June,</span> <span class="pre">July</span> <span class="pre">and</span> <span class="pre">August</span></code></p></li>
+<li><p>Time: <code class="docutils literal notranslate"><span class="pre">00:00</span></code> (default)</p></li>
+<li><p>Data Format: <code class="docutils literal notranslate"><span class="pre">NetCDF</span></code></p></li>
+</ul>
+</div>
+<p>At the end of the download form, select <strong>“Show API request”</strong>. This will reveal a block of code, which you can simply copy and paste into a cell of your Jupyter Notebook (see cell below). Having copied the API request into the cell below, running this will retrieve and download the data you requested into your local directory.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Please remember to accept the terms and conditions of the dataset, at the bottom of the CDS download form!</p>
+</div>
+</section>
+<section id="download-the-data">
+<h3>Download the data<a class="headerlink" href="#download-the-data" title="Link to this heading">#</a></h3>
+<p>With the API request copied into the cell below, running this cell will retrieve and download the data you requested into your local directory.</p>
+<div class="cell tag_request docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s2">&quot;reanalysis-era5-single-levels-monthly-means&quot;</span>
+<span class="n">request</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;product_type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;monthly_averaged_reanalysis&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;variable&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2m_temperature&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2023&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;month&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;06&quot;</span><span class="p">,</span> <span class="s2">&quot;07&quot;</span><span class="p">,</span> <span class="s2">&quot;08&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;00:00&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;data_format&quot;</span><span class="p">:</span> <span class="s2">&quot;netcdf&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;download_format&quot;</span><span class="p">:</span> <span class="s2">&quot;unarchived&quot;</span>
+<span class="p">}</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">cdsapi</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<span class="n">client</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DATADIR</span><span class="si">}</span><span class="s1">/dataset-filename.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2024-08-29 15:18:41,821 INFO Request ID is 470645da-5244-4792-a566-abfb9b2a81f4
+2024-08-29 15:18:41,881 INFO status has been updated to accepted
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inspect-data">
+<h3>Inspect data<a class="headerlink" href="#inspect-data" title="Link to this heading">#</a></h3>
+<p><em>This is an example section, please make it relevant to the content of your notebook. We strongly recommend xarray and/or earthkit for inspecting and processing the data.</em></p>
+<p>Now that we have downloaded the data, we can inspect it. We have requested the data in NetCDF format. This is a commonly used format for array-oriented scientific data. To read and process this data we will make use of the <a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray</a> library. Xarray is an open source project and Python package that makes working with labelled multi-dimensional arrays simple and efficient. We will read the data from our NetCDF file into an <a class="reference external" href="https://xarray.pydata.org/en/stable/generated/xarray.Dataset.html">xarray.Dataset</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t2m</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DATADIR</span><span class="si">}</span><span class="s1">/dataset-filename.nc&#39;</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">t2m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us now inspect our newly created Xarray dataset …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that the dataset has one variable called <strong>“t2m”</strong>, which stands for “2 metre temperature”, and three coordinates of <strong>longitude</strong>, <strong>latitude</strong> and <strong>time</strong>.</p>
+</section>
+</section>
+<section id="take-home-messages">
+<h2>Take home messages 📌<a class="headerlink" href="#take-home-messages" title="Link to this heading">#</a></h2>
+<p><em>In this section, summarise key take home messages.</em></p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://cds.climate.copernicus.eu/">Climate Data Store</a> contains a wealth of freely available climate data.</p></li>
+<li><p>This data can be searched and downloaded using a web interface, or programmatically using an API.</p></li>
+<li><p>Remember to accept the terms and conditions of datasets prior to download!</p></li>
+<li><p>Tutorials based on Jupyter notebooks contain example workflows which demonstrate how to explore C3S data using free Python packages such as <a class="reference external" href="https://xarray.dev/">Xarray</a> and <a class="reference external" href="https://earthkit-data.readthedocs.io/en/latest/">Earthkit</a>.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pages/unsorted"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-this-template-second-level-header-h2">How to use this template <em>[second level header, H2]</em></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-headers-third-level-header-h3">Use of headers  <em>[third level header, H3]</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-and-markdown-cells">Code and markdown cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-images">Use of images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-of-data">Use of data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-metadata">Notebook metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">Learning objectives 🎯</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-your-environment">Prepare your environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-the-cdsapi-and-your-credentials">Setup the CDSAPI and your credentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-and-import-libraries">(Install and) Import libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specify-data-directory">Specify data directory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-data">Explore data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-for-the-data">Search for the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-data">Download the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-data">Inspect data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-home-messages">Take home messages 📌</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <footer>
+  <img src="/img/footer.png" alt="DestinE logo" />
+  <p>Last updated: Sep 28, 2025</p>
+</footer>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
