@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6d87169a" />
@@ -183,7 +183,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="3.1_introduction_polytope.html">Introduction to Polytope</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Data Extraction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Extract Data with Polytope</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="3.3_request_language_syntax.html">Request Language Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.4_regridding.html">Regridding</a></li>
 </ul>
@@ -338,9 +339,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to Extract Data with Polytope</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polytope-server-addresses-for-destine">Polytope Server Addresses for DestinE</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-earthkit-data-library">Example Using Earthkit-Data library</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-python-polytope-client">Example Using Python Polytope Client:</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -362,8 +368,28 @@ It is included as part of the <a class="reference external" href="https://github
 <p class="admonition-title">Hint</p>
 <p>A comprehensive collection of Polytope examples is available in the <a class="reference external" href="https://github.com/destination-earth-digital-twins/polytope-examples">polytope-examples</a> repository.</p>
 </div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="polytope-server-addresses-for-destine">
+<h1>Polytope Server Addresses for DestinE<a class="headerlink" href="#polytope-server-addresses-for-destine" title="Link to this heading">#</a></h1>
+<p>To retrieve data from the EuroHPC infrastructure, users currently need to know the specific location where the data is hosted — either on the <strong>LUMI</strong> or <strong>MareNostrum (MN5)</strong> high-performance computing systems.</p>
+<p>In the future, <strong>Polytope</strong> will support <strong>federated access across databridges</strong>, so users will no longer need to know the exact storage location.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Current Polytope Server Addresses</strong></p>
+<ul class="simple">
+<li><p><strong>LUMI</strong><br />
+<code class="docutils literal notranslate"><span class="pre">polytope.lumi.apps.dte.destination-earth.eu</span></code></p></li>
+<li><p><strong>MareNostrum (MN5)</strong><br />
+<code class="docutils literal notranslate"><span class="pre">polytope.mn5.apps.dte.destination-earth.eu</span></code></p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Climate Digital Twin (DT) data is distributed between LUMI and MN5 based on the specific simulation. You can find detailed information on the location of each dataset in the <a class="reference internal" href="../2_digitial_twins_data_portfolio/2.1_dt_overview.html#climate-dt-overview"><span class="std std-ref">dataset overview table</span></a>.</p>
+</div>
 <section id="example-using-earthkit-data-library">
 <h2>Example Using Earthkit-Data library<a class="headerlink" href="#example-using-earthkit-data-library" title="Link to this heading">#</a></h2>
+<p>The from_source method from Earthkit-Data is used to extract data using a polytope source. Its method signature is documented <a class="reference external" href="https://earthkit-data.readthedocs.io/en/latest/guide/sources.html#polytope">here</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">earthkit.data</span>
 
 <span class="n">request</span> <span class="o">=</span> <span class="p">{</span>
@@ -384,8 +410,13 @@ It is included as part of the <a class="reference external" href="https://github
     <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;fc&#39;</span>
 <span class="p">}</span>
 
-<span class="c1"># The polytope source accesses the Polytope web services, using the polytope-client package.</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">earthkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span><span class="s2">&quot;polytope&quot;</span><span class="p">,</span> <span class="s2">&quot;destination-earth&quot;</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">address</span><span class="o">=</span><span class="s2">&quot;polytope.lumi.apps.dte.destination-earth.eu&quot;</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">earthkit</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">from_source</span><span class="p">(</span>
+    <span class="s2">&quot;polytope&quot;</span><span class="p">,</span> <span class="c1"># Source: The polytope source accesses the Polytope web services, using the polytope-client package.</span>
+    <span class="s2">&quot;destination-earth&quot;</span><span class="p">,</span> <span class="c1"># Collection: name of the polytope collection</span>
+    <span class="n">request</span><span class="p">,</span>
+    <span class="n">address</span><span class="o">=</span><span class="s2">&quot;polytope.lumi.apps.dte.destination-earth.eu&quot;</span><span class="p">,</span> <span class="c1"># The address of the polytope service</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">False</span> <span class="c1"># if True, the data is read as a stream. Otherwise it is retrieved into a file and stored in the cache. Stream-based access only works for GRIB and CoverageJson data.</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>For more information on using polytope with earthkit data please refer to the earthkit data <a class="reference external" href="https://earthkit-data.readthedocs.io/en/latest/guide/sources.html#polytope">polytope documentation section</a></p>
@@ -467,9 +498,14 @@ It is included as part of the <a class="reference external" href="https://github
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">How to Extract Data with Polytope</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polytope-server-addresses-for-destine">Polytope Server Addresses for DestinE</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-earthkit-data-library">Example Using Earthkit-Data library</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-using-python-polytope-client">Example Using Python Polytope Client:</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

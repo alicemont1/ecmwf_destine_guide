@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=6d87169a" />
@@ -183,7 +183,8 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="3.1_introduction_polytope.html">Introduction to Polytope</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="3.2_data_extraction.html">Data Extraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3.2_data_extraction.html">How to Extract Data with Polytope</a></li>
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Request Language Syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3.4_regridding.html">Regridding</a></li>
 </ul>
@@ -398,19 +399,19 @@ document.write(`
 <tr class="row-even"><td><p></p></td>
 <td><p>extremes-dt</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">wave</span></code>, <code class="docutils literal notranslate"><span class="pre">oper</span></code></p></td>
-<td><p>Wave or atmospheric model stream</p></td>
+<td><p>operational data indexed using step, as well as wave model data where needed</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">activity</span></code></p></td>
 <td><p>climate-dt only</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">story-nudging</span></code>, <code class="docutils literal notranslate"><span class="pre">scenariomip</span></code>, <code class="docutils literal notranslate"><span class="pre">highresmip</span></code>, <code class="docutils literal notranslate"><span class="pre">cmip6</span></code>, <code class="docutils literal notranslate"><span class="pre">baseline</span></code></p></td>
-<td><p>Scientific project or activity</p></td>
+<td><p>The CMIP <em>Activity</em> that the data is related to</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">type</span></code></p></td>
 <td><p>climate-dt, extremes-dt</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">fc</span></code></p></td>
 <td><p>Forecast data</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">resolution</span></code></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*resolution</span></code></p></td>
 <td><p>climate-dt, extremes-dt</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">standard</span></code>, <code class="docutils literal notranslate"><span class="pre">high</span></code></p></td>
 <td><p>Spatial resolution</p></td>
@@ -418,7 +419,7 @@ document.write(`
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">experiment</span></code></p></td>
 <td><p>climate-dt only</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">tplus2.0k</span></code>, <code class="docutils literal notranslate"><span class="pre">ssp3-7.0</span></code>, <code class="docutils literal notranslate"><span class="pre">hist</span></code>, <code class="docutils literal notranslate"><span class="pre">cont</span></code></p></td>
-<td><p>Model scenario or setup</p></td>
+<td><p>The CMIP <em>Experiment</em> that the data is related to.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">generation</span></code></p></td>
 <td><p>climate-dt only</p></td>
@@ -433,15 +434,31 @@ document.write(`
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">realization</span></code></p></td>
 <td><p>climate-dt only</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
-<td><p>members of an ensemble of simulations that differ only in their initial conditions. <a class="reference external" href="https://wcrp-cmip.github.io/WGCM_Infrastructure_Panel/Papers/CMIP6_global_attributes_filenames_CVs_v6.2.7.pdf">More info</a></p></td>
+<td><p>Ensemble members (Specifies the climate realization. Based on perturbations of initial conditions.)</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">feature</span></code></p></td>
-<td><p>optional</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*feature</span></code></p></td>
+<td><p>climate-dt, extremes-dt</p></td>
 <td><p>JSON object</p></td>
 <td><p>Used for Polytope feature extraction requests</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*freequency</span></code></p></td>
+<td><p>Only for a wave field</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*direction</span></code></p></td>
+<td><p>Only for a wave field</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*levelist</span></code></p></td>
+<td><p>ml/pl/sol type data</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
 </tbody>
 </table>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> optional fields</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The mars “resol” keyword does not work on DestinE data, and instead the key “resolution” should be used to specify dataset resolution.</p>
